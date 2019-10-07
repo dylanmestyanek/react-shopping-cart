@@ -12,7 +12,9 @@ import CartContext from "./contexts/CartContext"
 
 function App() {
 	const [products] = useState(data);
-	const [cart, setCart] = useState([]);
+	const [cart, setCart] = useState(localStorage.getItem('cart') 
+		? localStorage.getItem('cart')
+		: []);
 
 	const addItem = item => {
 		setCart([...cart, item]);
